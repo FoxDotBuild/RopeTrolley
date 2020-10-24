@@ -46,4 +46,4 @@ We need help with:
  * Other things
 
 Please contact Rick if you would like to get involved. #ropeTrolley on Fox.Build Slack.
-https://www.theverge.com/2020/10/21/21527197/quibi-streaming-service-mobile-shutting-down-end-katzenberg
+https://foxbuild.slack.com/archives/C01D2JA4LG6
