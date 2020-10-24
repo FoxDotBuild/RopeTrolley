@@ -1,5 +1,7 @@
 # Rope Trolley
 
+![Something like this but not this](trolley.jpg)
+
 This is a planning document for a November 2020 group project at Fox.Build.
 
 We're going to build a remotely operated trolley that travels along an overhead rope. It will be very similar to a [DIY cable cam](https://youtu.be/Ao-e1Lg6lMY?t=37).
