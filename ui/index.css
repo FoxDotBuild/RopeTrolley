@@ -1,0 +1,36 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #8D0801;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #BF0603;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0% 5%;
+  align-items: center;
+  grid-template-areas:
+    "Video Motor"
+    "Video Servo";
+}
+.video { 
+    grid-area: Video;
+    justify-self: right;
+
+}
+.motor { 
+    grid-area: Motor; 
+}
+.servo { 
+    grid-area: Servo;
+}
