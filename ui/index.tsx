@@ -40,26 +40,35 @@ class TrolleyControls extends React.Component<TrolleyProps, TrolleyState> {
 
   render() {
     return <div>
-      <h1>What does the UI Need?</h1>
-      <p>
-        Motor speed: {this.state.motorSpeed}
-      </p>
-      <h1>Motor</h1>
-      <p>
-        Reverse / Neutral / Forward
-      </p>
-      <input type="range"
-        min="-100"
-        max="100"
-        onMouseUp={this.stop}
-        onMouseDown={this.startDriving}
-        onChange={this.setSpeed}
-        value={this.state.motorSpeed} />
-      <h1>Servo</h1>
-      <p>
-        0 - 360
-      </p>
-      WORK IN PROGRESS
+      <h1 className="title">Fox.Build Rope Trolley</h1>
+      <div className="grid-container">
+        <div className="video">
+          <img src="http://placehold.jp/320x240.png" alt="video feed placeholder"/>
+        </div>
+        <div className="motor">
+         <h2>Motor</h2>
+          <p>
+             Motor speed: {this.state.motorSpeed}
+          </p>
+          <p>
+             Reverse / Neutral / Forward
+          </p>
+          <input type="range"
+            min="-100"
+            max="100"
+            onMouseUp={this.stop}
+            onMouseDown={this.startDriving}
+            onChange={this.setSpeed}
+            value={this.state.motorSpeed} />
+        </div>
+        <div className="servo">
+          <h2>Servo</h2>
+          <p>
+             0 - 360
+          </p>
+          WORK IN PROGRESS
+         </div>
+      </div>
     </div>;
   }
 }
