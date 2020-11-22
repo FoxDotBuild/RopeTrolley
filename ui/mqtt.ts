@@ -1,33 +1,20 @@
 import mqtt from "mqtt";
 
 export interface MqttSenderThing {
-  send(topic: string, payload: number): void;
+  send(payload: number): void;
 }
-export const MOTOR_CHANNEL = "rope_trolley/motor/speed";
 
 export function createMqttChannel(): MqttSenderThing {
-  const client = mqtt.connect("ws://mqtt.eclipse.org:80");
+  const client = mqtt.connect(localStorage["mqtt"] || "ws://test.mosquitto.org:8080");
 
-
-  client.on("connect", function () {
-    client.subscribe(MOTOR_CHANNEL, function (err) {
-      if (!err) {
-        client.publish(MOTOR_CHANNEL, "Hello mqtt");
-      }
-    })
-  })
-
-  client.on("message", function (topic, message) {
-    switch (topic) {
-      case MOTOR_CHANNEL:
-        console.log(message);
-        break;
-      default:
-        console.log(`UNKNOWN TOPIC ${topic}: ${message}`);
-    }
-  });
+  client.on("connect", function () { console.log("Connected to MQTT"); });
 
   return {
-    send(topic: string, payload: number) { client.publish(topic, payload) }
+    send(payload: number) {
+      const int = Math.round(payload);
+      console.log("Sent speed of " + int);
+      // client.publish(`rope_trolley/${int}`, int);
+      client.publish(`rope_trolley/foo`, JSON.stringify(int));
+    }
   }
 }

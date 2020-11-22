@@ -24,7 +24,7 @@ class TrolleyControls extends React.Component<TrolleyProps, TrolleyState> {
 
   stop = (_event: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
     this.setState({ motorSpeed: 0, isDriving: false });
-    this.props.mqttSender.send(MOTOR_CHANNEL, 0);
+    this.props.mqttSender.send(0);
   }
 
   startDriving = () => this.setState({ isDriving: true });
@@ -33,8 +33,7 @@ class TrolleyControls extends React.Component<TrolleyProps, TrolleyState> {
     if (this.state.isDriving) {
       const val = parseInt(event.target.value, 10);
       this.setState({ motorSpeed: val });
-      console.log("SET SPEED: " + val);
-      this.props.mqttSender.send(MOTOR_CHANNEL, val);
+      this.props.mqttSender.send(val);
     }
   }
 
@@ -43,15 +42,15 @@ class TrolleyControls extends React.Component<TrolleyProps, TrolleyState> {
       <h1 className="title">Fox.Build Rope Trolley</h1>
       <div className="grid-container">
         <div className="video">
-          <img src="http://placehold.jp/320x240.png" alt="video feed placeholder"/>
+          <img src="http://placehold.jp/320x240.png" alt="video feed placeholder" />
         </div>
         <div className="motor">
-         <h2>Motor</h2>
+          <h2>Motor</h2>
           <p>
-             Motor speed: {this.state.motorSpeed}
+            Motor speed: {this.state.motorSpeed}
           </p>
           <p>
-             Reverse / Neutral / Forward
+            Reverse / Neutral / Forward
           </p>
           <input type="range"
             min="-100"
@@ -64,7 +63,7 @@ class TrolleyControls extends React.Component<TrolleyProps, TrolleyState> {
         <div className="servo">
           <h2>Servo</h2>
           <p>
-             0 - 360
+            0 - 360
           </p>
           WORK IN PROGRESS
          </div>

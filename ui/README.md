@@ -1,6 +1,6 @@
 # Installation
 
-1. `nppm install parcel-bundler -g`
+1. `npm install parcel-bundler -g`
 1. Clone repo
 1. `cd` into `ui/` directory
 1. `npm install`
